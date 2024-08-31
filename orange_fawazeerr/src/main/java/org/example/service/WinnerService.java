@@ -21,7 +21,7 @@ public class WinnerService {
     public String getAllWinners(String msisdn) {
 
         //winnerRepository.addawinner(msisdn);
-        List<winner> mywinner = winnerRepository.checkWinnerpresent(msisdn);
+        List<Winner> mywinner = winnerRepository.checkWinnerpresent(msisdn);
         if(mywinner.isEmpty()){
             // first time for this winner to play fawazeer
             int m = checkforAmountofPrizes(msisdn);
@@ -51,7 +51,7 @@ public class WinnerService {
                 LocalDate currentDate = LocalDate.now();
                 int dayOfMonth = currentDate.getDayOfMonth();
                 LocalTime currentTime = LocalTime.now();
-                winner winner = mywinner.get(i);
+                Winner winner = mywinner.get(i);
                 LocalDate dateforWinner = winner.getDate();
                 int dayOfMonthWinner = dateforWinner.getDayOfMonth();
                 if(dayOfMonth>dayOfMonthWinner){
